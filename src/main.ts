@@ -12,6 +12,8 @@ import { randomSeed, seedFromString } from './rng';
 import { DodgeBot, ReactiveBot } from './bot';
 
 const W = CONFIG.world.width, H = CONFIG.world.height;
+/** Sprite folder relative to the deploy base (works at the domain root and under a sub-path like /shift/). */
+const ASSETS = `${import.meta.env.BASE_URL}assets/projectiles/`;
 // ?diff=aware → the 죽림고수-style preset (g3.2: stream / line / burst on independent timers) for side-by-side feel comparison with g3.1
 const diffParam = new URLSearchParams(location.search).get('diff') ?? 'default';
 const LEVELS = LEVEL_PRESETS[diffParam] ?? LEVELS_DEFAULT;
@@ -248,13 +250,13 @@ function renderOverlay(phase: Phase) {
     const best = bestFor(mode).best;
     const rows = HOME_MODES.map((m) => `
         <button class="mode" type="button" data-mode="${m}" aria-pressed="${m === mode}">
-          <span class="k ${MODES[m].badge}">${MODES[m].badge !== 'core' ? '<img src="/assets/projectiles/standard.png" alt="" draggable="false" />' : ''}</span>
+          <span class="k ${MODES[m].badge}">${MODES[m].badge !== 'core' ? `<img src="${ASSETS}standard.png" alt="" draggable="false" />` : ''}</span>
           <span class="n">${MODES[m].name}<small>${MODES[m].sub}</small></span>
           <span class="h">${MODES[m].hint}</span>
         </button>`).join('');
     // a still composition of darts caught mid-flight around the title (streaks and specks drawn in CSS, no animation)
     const deco = [['standard', 'd1'], ['standard', 'd2'], ['large', 'd3'], ['standard', 'd4'], ['large', 'd5'], ['large', 'd6'], ['standard', 'd7'], ['standard', 'd8'], ['standard', 'd9'], ['large', 'd10']]
-      .map(([k, c]) => `<span class="deco ${c} ${k}" aria-hidden="true"><i></i><b></b><img src="/assets/projectiles/${k}.png" alt="" draggable="false" /></span>`).join('');
+      .map(([k, c]) => `<span class="deco ${c} ${k}" aria-hidden="true"><i></i><b></b><img src="${ASSETS}${k}.png" alt="" draggable="false" /></span>`).join('');
     const enter = titleEntrance; // the wordmark slides in once per arrival at the home screen, not on every mode click
     titleEntrance = false;
     overlay.innerHTML = `
