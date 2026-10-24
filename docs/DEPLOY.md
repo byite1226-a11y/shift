@@ -1,21 +1,20 @@
 # 배포와 광고 설정 (2026-10-24)
 
-프로젝트 위치: `C:\dev\shift` (git, main). 이 문서는 공개 배포와 AdSense 연결에 필요한 순서를 전부 적은 것이다. 코드 쪽 준비는 끝나 있고, 아래 1·4·5는 계정 로그인이 필요해 운영자가 직접 한다.
+프로젝트 위치: `C:\dev\shift` (git, main). 이 문서는 공개 배포와 AdSense 연결에 필요한 순서를 전부 적은 것이다. 1·2(배포)는 끝났고, 3·4(도메인·AdSense)는 계정과 결제가 필요해 운영자가 직접 한다.
 
-## 1. GitHub 저장소 — 완료, 공개 전환만 남음 (운영자 1클릭)
+## 1. GitHub 저장소 — 완료 (공개, 2026-10-24)
 
-저장소 `https://github.com/byite1226-a11y/shift`는 **비공개**로 만들어 푸시해 두었다(Claude Code는 공개 저장소 생성·공개 전환 권한이 막혀 있다). 공개로 바꾸는 것은 GitHub에서 한 번 클릭:
-Settings → General → 맨 아래 Danger Zone → "Change repository visibility" → Public.
+저장소 `https://github.com/byite1226-a11y/shift`는 처음 비공개로 만들어 푸시했고(Claude Code는 공개 저장소 생성·공개 전환 권한이 막혀 있다), 2026-10-24 운영자가 Settings → Danger Zone에서 Public으로 바꿨다. 공개 저장소를 쓰는 이유: Pages 무료 플랜은 공개 저장소에서만 되고, 개인정보 처리방침의 문의 링크가 `github.com/byite1226-a11y/shift/issues`이며, README가 검색·AI 답변에 읽힌다.
 
-공개가 되는 순간 2번의 GitHub Pages 배포가 자동으로 돈다. 공개 저장소를 쓰는 이유: Pages 무료 플랜은 공개 저장소에서만 되고, 개인정보 처리방침의 문의 링크가 `github.com/byite1226-a11y/shift/issues`이며, README가 검색·AI 답변에 읽힌다.
+## 2. 호스팅: GitHub Pages — 가동 중
 
-## 2. 호스팅: GitHub Pages (자동)
+**https://byite1226-a11y.github.io/shift/** 에서 서비스 중이다(2026-10-24 첫 배포, 홈 렌더링·스프라이트·privacy/ads/robots/llms 파일 모두 확인). `.github/workflows/pages.yml`이 main에 푸시될 때마다 테스트 → `npm run build -- --base=/shift/` → Pages 배포를 한다(약 1분). 주소는 `index.html`의 og:url·canonical·JSON-LD url에 들어가 있고, 스프라이트 경로는 `import.meta.env.BASE_URL` 기준이라 하위 경로에서도 깨지지 않는다.
 
-`.github/workflows/pages.yml`이 main에 푸시될 때마다 테스트 → `npm run build -- --base=/shift/` → Pages 배포를 한다. 주소는 **https://byite1226-a11y.github.io/shift/** 이고 `index.html`의 og:url·canonical·JSON-LD url에 이미 들어가 있다. 스프라이트 경로는 `import.meta.env.BASE_URL` 기준이라 하위 경로에서도 깨지지 않는다.
+Pages 사이트 자체는 워크플로의 `configure-pages`가 만들지 못한다(Actions 토큰에는 Pages 생성 권한이 없어 "Resource not accessible by integration"으로 실패). 운영자 토큰으로 `gh api -X POST repos/byite1226-a11y/shift/pages -f build_type=workflow`를 한 번 실행해 켰고, 이후 배포는 자동이다. 수동 재배포: `gh workflow run pages.yml --ref main`.
 
 Vercel은 연결된 커넥터의 권한이 프로젝트 생성을 허용하지 않아(403) 쓰지 못했다. 나중에 Vercel로 옮기려면 대시보드에서 "Import Git Repository"로 이 저장소를 가져오면 되고(빌드 설정 자동), 그때 og:url 세 곳을 새 주소로 바꾼다.
 
-## 3. 도메인 (AdSense를 쓰려면 필요)
+## 3. 도메인 (AdSense를 쓰려면 필요) — 다음 단계
 
 AdSense는 `github.io`나 `vercel.app` 같은 **공유 서브도메인 사이트를 받지 않는다**. 광고를 붙이려면 직접 소유한 도메인(예: `shiftgame.kr`)이 있어야 하고, `ads.txt`가 도메인 루트(`https://도메인/ads.txt`)에 있어야 한다. 순서: 도메인 구입 → GitHub Pages 설정의 Custom domain에 입력(DNS CNAME) → `index.html`의 og:url·canonical·JSON-LD url과 Pages 워크플로의 `--base=/`로 변경(루트 호스팅이 되면 `/shift/` 접두사가 사라진다). 이 변경은 Claude Code가 한다.
 
