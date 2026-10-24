@@ -1,0 +1,989 @@
+{
+ "generatedAt": "2026-10-21T04:06:22.829Z",
+ "seeds": 20,
+ "reactionMs": 150,
+ "bots": {
+  "geometric": {
+   "gate02": {
+    "seeds": 20,
+    "clearRate": 1,
+    "medianSurvivalMs": 40000,
+    "deathsByGroup": {},
+    "deathsByTier": {},
+    "deathsByPhase": {},
+    "suspicious": [],
+    "deaths": []
+   },
+   "gate01": {
+    "seeds": 20,
+    "clearRate": 0.7,
+    "medianSurvivalMs": 40000,
+    "deathsByGroup": {
+     "gate01": 6
+    },
+    "deathsByTier": {
+     "normal": 5,
+     "slow": 1
+    },
+    "deathsByPhase": {
+     "P4": 3,
+     "P3": 2,
+     "P2": 1
+    },
+    "suspicious": [
+     {
+      "seed": 1,
+      "t": 38660,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 205,
+      "telegraphed": false,
+      "visibleForMs": 60
+     },
+     {
+      "seed": 7,
+      "t": 34270,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 418,
+      "telegraphed": false,
+      "visibleForMs": 170
+     },
+     {
+      "seed": 11,
+      "t": 26270,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 154,
+      "telegraphed": false,
+      "visibleForMs": 70
+     },
+     {
+      "seed": 14,
+      "t": 10920,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "slow",
+      "kind": "normal",
+      "flightMs": 291,
+      "telegraphed": false,
+      "visibleForMs": 170
+     },
+     {
+      "seed": 15,
+      "t": 32210,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 187,
+      "telegraphed": false,
+      "visibleForMs": 110
+     },
+     {
+      "seed": 18,
+      "t": 23755,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 456,
+      "telegraphed": false,
+      "visibleForMs": 155
+     }
+    ],
+    "deaths": [
+     {
+      "seed": 1,
+      "t": 38660,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 205,
+      "telegraphed": false,
+      "visibleForMs": 60
+     },
+     {
+      "seed": 7,
+      "t": 34270,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 418,
+      "telegraphed": false,
+      "visibleForMs": 170
+     },
+     {
+      "seed": 11,
+      "t": 26270,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 154,
+      "telegraphed": false,
+      "visibleForMs": 70
+     },
+     {
+      "seed": 14,
+      "t": 10920,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "slow",
+      "kind": "normal",
+      "flightMs": 291,
+      "telegraphed": false,
+      "visibleForMs": 170
+     },
+     {
+      "seed": 15,
+      "t": 32210,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 187,
+      "telegraphed": false,
+      "visibleForMs": 110
+     },
+     {
+      "seed": 18,
+      "t": 23755,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 456,
+      "telegraphed": false,
+      "visibleForMs": 155
+     }
+    ]
+   }
+  },
+  "reactive": {
+   "gate02": {
+    "seeds": 20,
+    "clearRate": 0.6,
+    "medianSurvivalMs": 40000,
+    "deathsByGroup": {
+     "aimedSlowPair": 1,
+     "wallSlow": 1,
+     "largeCross": 3,
+     "fanNormal": 2,
+     "fanLargeSlow": 1
+    },
+    "deathsByTier": {
+     "slow": 4,
+     "normal": 4
+    },
+    "deathsByPhase": {
+     "P2": 6,
+     "P4": 1,
+     "P3": 1
+    },
+    "suspicious": [],
+    "deaths": [
+     {
+      "seed": 1,
+      "t": 13810,
+      "group": "aimedSlowPair",
+      "pattern": "aimed",
+      "tier": "slow",
+      "kind": "normal",
+      "flightMs": 3834,
+      "telegraphed": false,
+      "visibleForMs": 4660
+     },
+     {
+      "seed": 3,
+      "t": 14380,
+      "group": "wallSlow",
+      "pattern": "volley",
+      "tier": "slow",
+      "kind": "normal",
+      "flightMs": null,
+      "telegraphed": false,
+      "visibleForMs": 2930
+     },
+     {
+      "seed": 7,
+      "t": 11990,
+      "group": "largeCross",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 1490,
+      "telegraphed": false,
+      "visibleForMs": 1390
+     },
+     {
+      "seed": 11,
+      "t": 13710,
+      "group": "fanNormal",
+      "pattern": "fan",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 1239,
+      "telegraphed": false,
+      "visibleForMs": 1110
+     },
+     {
+      "seed": 12,
+      "t": 14015,
+      "group": "largeCross",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 2113,
+      "telegraphed": false,
+      "visibleForMs": 2265
+     },
+     {
+      "seed": 13,
+      "t": 36165,
+      "group": "fanLargeSlow",
+      "pattern": "fan",
+      "tier": "slow",
+      "kind": "large",
+      "flightMs": 3867,
+      "telegraphed": false,
+      "visibleForMs": 4215
+     },
+     {
+      "seed": 17,
+      "t": 28575,
+      "group": "largeCross",
+      "pattern": "aimed",
+      "tier": "slow",
+      "kind": "large",
+      "flightMs": 4542,
+      "telegraphed": false,
+      "visibleForMs": 4325
+     },
+     {
+      "seed": 19,
+      "t": 10515,
+      "group": "fanNormal",
+      "pattern": "fan",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 1333,
+      "telegraphed": false,
+      "visibleForMs": 1365
+     }
+    ]
+   },
+   "gate01": {
+    "seeds": 20,
+    "clearRate": 0.1,
+    "medianSurvivalMs": 28405,
+    "deathsByGroup": {
+     "gate01": 18
+    },
+    "deathsByTier": {
+     "normal": 13,
+     "slow": 5
+    },
+    "deathsByPhase": {
+     "P3": 9,
+     "P4": 6,
+     "P2": 2,
+     "P1": 1
+    },
+    "suspicious": [
+     {
+      "seed": 9,
+      "t": 32910,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 472,
+      "telegraphed": false,
+      "visibleForMs": 310
+     }
+    ],
+    "deaths": [
+     {
+      "seed": 1,
+      "t": 27780,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 2060,
+      "telegraphed": false,
+      "visibleForMs": 2880
+     },
+     {
+      "seed": 2,
+      "t": 21610,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 2620,
+      "telegraphed": false,
+      "visibleForMs": 3210
+     },
+     {
+      "seed": 3,
+      "t": 27915,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 1574,
+      "telegraphed": false,
+      "visibleForMs": 1715
+     },
+     {
+      "seed": 4,
+      "t": 30660,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 2490,
+      "telegraphed": false,
+      "visibleForMs": 2510
+     },
+     {
+      "seed": 5,
+      "t": 39005,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 3248,
+      "telegraphed": false,
+      "visibleForMs": 2405
+     },
+     {
+      "seed": 6,
+      "t": 8315,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "slow",
+      "kind": "normal",
+      "flightMs": 1988,
+      "telegraphed": false,
+      "visibleForMs": 1565
+     },
+     {
+      "seed": 7,
+      "t": 25415,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 1858,
+      "telegraphed": false,
+      "visibleForMs": 1165
+     },
+     {
+      "seed": 9,
+      "t": 32910,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 472,
+      "telegraphed": false,
+      "visibleForMs": 310
+     },
+     {
+      "seed": 10,
+      "t": 38095,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 2035,
+      "telegraphed": false,
+      "visibleForMs": 2495
+     },
+     {
+      "seed": 11,
+      "t": 13310,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "slow",
+      "kind": "normal",
+      "flightMs": 949,
+      "telegraphed": false,
+      "visibleForMs": 860
+     },
+     {
+      "seed": 12,
+      "t": 18710,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "slow",
+      "kind": "normal",
+      "flightMs": 1876,
+      "telegraphed": false,
+      "visibleForMs": 2010
+     },
+     {
+      "seed": 14,
+      "t": 19470,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "slow",
+      "kind": "normal",
+      "flightMs": 3359,
+      "telegraphed": false,
+      "visibleForMs": 2770
+     },
+     {
+      "seed": 15,
+      "t": 28405,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 3230,
+      "telegraphed": false,
+      "visibleForMs": 3505
+     },
+     {
+      "seed": 16,
+      "t": 6200,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "slow",
+      "kind": "normal",
+      "flightMs": 4153,
+      "telegraphed": false,
+      "visibleForMs": 4050
+     },
+     {
+      "seed": 17,
+      "t": 28690,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 2646,
+      "telegraphed": false,
+      "visibleForMs": 2490
+     },
+     {
+      "seed": 18,
+      "t": 33570,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 1839,
+      "telegraphed": false,
+      "visibleForMs": 1970
+     },
+     {
+      "seed": 19,
+      "t": 30800,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 2432,
+      "telegraphed": false,
+      "visibleForMs": 2000
+     },
+     {
+      "seed": 20,
+      "t": 23305,
+      "group": "gate01",
+      "pattern": "aimed",
+      "tier": "normal",
+      "kind": "normal",
+      "flightMs": 2355,
+      "telegraphed": false,
+      "visibleForMs": 1655
+     }
+    ]
+   }
+  }
+ },
+ "gate03": {
+  "geometric": {
+   "seeds": 20,
+   "capMs": 180000,
+   "aliveAtCap": 8,
+   "aliveRate": 0.4,
+   "medianSurvivalMs": 149550,
+   "minSurvivalMs": 15785,
+   "meanLevel": 9.7,
+   "deathsByGroup": {
+    "burst": 10,
+    "line": 1,
+    "stream": 1
+   }
+  },
+  "reactive": {
+   "seeds": 20,
+   "capMs": 180000,
+   "aliveAtCap": 0,
+   "aliveRate": 0,
+   "medianSurvivalMs": 8700,
+   "minSurvivalMs": 7415,
+   "meanLevel": 3.3,
+   "deathsByGroup": {
+    "line": 20
+   }
+  },
+  "stats": {
+   "rounds": 20,
+   "groupStarts": {
+    "stream": 3479,
+    "line": 438,
+    "burst": 525
+   },
+   "projectilesByGroup": {
+    "stream": 3479,
+    "line": 4803,
+    "burst": 4099
+   },
+   "projectileShareByGroup": {
+    "stream": 0.281,
+    "line": 0.3879,
+    "burst": 0.3311
+   },
+   "plannedByGroup": {
+    "stream": 3479,
+    "line": 5496,
+    "burst": 4101
+   },
+   "notFired": {
+    "spawn_cancelled:offfield": 652,
+    "spawn_cancelled:unsafe": 41
+   },
+   "plannedByPhase": {
+    "LV1": 40,
+    "LV2": 60,
+    "LV3": 240,
+    "LV4": 180,
+    "LV5": 360,
+    "LV6": 58,
+    "LV7": 418,
+    "LV8": 73,
+    "LV9": 450,
+    "LV10": 11197
+   },
+   "spawnedByPhase": {
+    "LV1": 40,
+    "LV2": 60,
+    "LV3": 232,
+    "LV4": 180,
+    "LV5": 342,
+    "LV6": 58,
+    "LV7": 400,
+    "LV8": 73,
+    "LV9": 437,
+    "LV10": 10559
+   },
+   "plannedByTier": {
+    "slow": 100,
+    "normal": 9911,
+    "fast": 3065
+   },
+   "spawnedByTier": {
+    "slow": 100,
+    "normal": 9216,
+    "fast": 3065
+   },
+   "notFiredByTier": {
+    "normal:offfield": 652,
+    "normal:unsafe": 41
+   },
+   "skipRatio": {
+    "fast": {
+     "numerator": 0,
+     "denominator": 3065,
+     "ratio": 0
+    },
+    "ceiling": {
+     "numerator": 0,
+     "denominator": 13076,
+     "ratio": 0
+    },
+    "all": {
+     "numerator": 695,
+     "denominator": 13076,
+     "ratio": 0.0532
+    }
+   },
+   "concurrency": {
+    "max": 28,
+    "mean": 15.96,
+    "p95": 25,
+    "samples": 24137
+   },
+   "fastSlowCoexist": {
+    "overall": 0,
+    "after18s": 0
+   },
+   "danger40px": {
+    "samples": 1005,
+    "fraction": 0.0416,
+    "byNearestGroup": {
+     "line": 531,
+     "stream": 205,
+     "burst": 269
+    }
+   },
+   "telegraph": {
+    "checked": 3065,
+    "originMismatch": 0,
+    "shownButNotFired": 0
+   },
+   "flipsPerRound": 29.6,
+   "maxActive": 28,
+   "minFlightMs": 625
+  }
+ },
+ "stats": {
+  "gate02": {
+   "rounds": 20,
+   "groupStarts": {
+    "aimedSlow": 43,
+    "wallSlow": 52,
+    "aimedSlowPair": 66,
+    "staggerSlowNormal": 88,
+    "fanNormal": 102,
+    "largeCross": 122,
+    "snapFast": 39,
+    "staggerNormalFast": 55,
+    "cageThenFast": 40,
+    "fanLargeSlow": 39
+   },
+   "projectilesByGroup": {
+    "aimedSlow": 43,
+    "wallSlow": 244,
+    "aimedSlowPair": 132,
+    "staggerSlowNormal": 176,
+    "fanNormal": 510,
+    "largeCross": 243,
+    "snapFast": 39,
+    "staggerNormalFast": 109,
+    "cageThenFast": 226,
+    "fanLargeSlow": 117
+   },
+   "projectileShareByGroup": {
+    "aimedSlow": 0.0234,
+    "wallSlow": 0.1327,
+    "aimedSlowPair": 0.0718,
+    "staggerSlowNormal": 0.0957,
+    "fanNormal": 0.2773,
+    "largeCross": 0.1321,
+    "snapFast": 0.0212,
+    "staggerNormalFast": 0.0593,
+    "cageThenFast": 0.1229,
+    "fanLargeSlow": 0.0636
+   },
+   "plannedByGroup": {
+    "aimedSlow": 43,
+    "wallSlow": 244,
+    "aimedSlowPair": 132,
+    "staggerSlowNormal": 176,
+    "fanNormal": 510,
+    "largeCross": 243,
+    "snapFast": 39,
+    "staggerNormalFast": 109,
+    "cageThenFast": 227,
+    "fanLargeSlow": 117
+   },
+   "notFired": {
+    "spawn_cancelled:fastcap": 1
+   },
+   "plannedByPhase": {
+    "LV1": 195,
+    "LV2": 492,
+    "LV3": 504,
+    "LV4": 649
+   },
+   "spawnedByPhase": {
+    "LV1": 195,
+    "LV2": 492,
+    "LV3": 503,
+    "LV4": 649
+   },
+   "plannedByTier": {
+    "slow": 938,
+    "normal": 774,
+    "fast": 128
+   },
+   "spawnedByTier": {
+    "slow": 938,
+    "normal": 774,
+    "fast": 127
+   },
+   "notFiredByTier": {
+    "fast:fastcap": 1
+   },
+   "skipRatio": {
+    "fast": {
+     "numerator": 1,
+     "denominator": 128,
+     "ratio": 0.0078
+    },
+    "ceiling": {
+     "numerator": 0,
+     "denominator": 1840,
+     "ratio": 0
+    },
+    "all": {
+     "numerator": 1,
+     "denominator": 1840,
+     "ratio": 0.0005
+    }
+   },
+   "concurrency": {
+    "max": 25,
+    "mean": 10.79,
+    "p95": 18,
+    "samples": 8000
+   },
+   "fastSlowCoexist": {
+    "overall": 0.3728,
+    "after18s": 0.6747
+   },
+   "danger40px": {
+    "samples": 80,
+    "fraction": 0.01,
+    "byNearestGroup": {
+     "cageThenFast": 15,
+     "fanNormal": 25,
+     "staggerSlowNormal": 7,
+     "wallSlow": 23,
+     "staggerNormalFast": 2,
+     "largeCross": 2,
+     "aimedSlowPair": 2,
+     "snapFast": 3,
+     "fanLargeSlow": 1
+    }
+   },
+   "telegraph": {
+    "checked": 127,
+    "originMismatch": 0,
+    "shownButNotFired": 0
+   },
+   "flipsPerRound": 4.3,
+   "maxActive": 25,
+   "minFlightMs": 675
+  },
+  "gate01": {
+   "rounds": 20,
+   "groupStarts": {
+    "gate01": 992
+   },
+   "projectilesByGroup": {
+    "gate01": 1889
+   },
+   "projectileShareByGroup": {
+    "gate01": 1
+   },
+   "plannedByGroup": {
+    "gate01": 1889
+   },
+   "notFired": {},
+   "plannedByPhase": {
+    "LV1": 140,
+    "LV2": 313,
+    "LV3": 656,
+    "LV4": 780
+   },
+   "spawnedByPhase": {
+    "LV1": 140,
+    "LV2": 313,
+    "LV3": 656,
+    "LV4": 780
+   },
+   "plannedByTier": {
+    "slow": 453,
+    "normal": 1436
+   },
+   "spawnedByTier": {
+    "slow": 453,
+    "normal": 1436
+   },
+   "notFiredByTier": {},
+   "skipRatio": {
+    "fast": {
+     "numerator": 0,
+     "denominator": 0,
+     "ratio": 0
+    },
+    "ceiling": {
+     "numerator": 0,
+     "denominator": 1889,
+     "ratio": 0
+    },
+    "all": {
+     "numerator": 0,
+     "denominator": 1889,
+     "ratio": 0
+    }
+   },
+   "concurrency": {
+    "max": 27,
+    "mean": 11.02,
+    "p95": 21,
+    "samples": 7258
+   },
+   "fastSlowCoexist": {
+    "overall": 0,
+    "after18s": 0
+   },
+   "danger40px": {
+    "samples": 121,
+    "fraction": 0.0167,
+    "byNearestGroup": {
+     "gate01": 121
+    }
+   },
+   "telegraph": {
+    "checked": 0,
+    "originMismatch": 0,
+    "shownButNotFired": 0
+   },
+   "flipsPerRound": 0,
+   "maxActive": 27,
+   "minFlightMs": 124
+  },
+  "gate02_reactiveRounds": {
+   "rounds": 20,
+   "groupStarts": {
+    "aimedSlow": 43,
+    "wallSlow": 46,
+    "aimedSlowPair": 62,
+    "staggerSlowNormal": 70,
+    "fanNormal": 65,
+    "largeCross": 90,
+    "snapFast": 27,
+    "staggerNormalFast": 39,
+    "fanLargeSlow": 28,
+    "cageThenFast": 26
+   },
+   "projectilesByGroup": {
+    "aimedSlow": 43,
+    "wallSlow": 210,
+    "aimedSlowPair": 124,
+    "staggerSlowNormal": 140,
+    "fanNormal": 325,
+    "largeCross": 180,
+    "snapFast": 27,
+    "staggerNormalFast": 77,
+    "fanLargeSlow": 84,
+    "cageThenFast": 147
+   },
+   "projectileShareByGroup": {
+    "aimedSlow": 0.0317,
+    "wallSlow": 0.1548,
+    "aimedSlowPair": 0.0914,
+    "staggerSlowNormal": 0.1032,
+    "fanNormal": 0.2395,
+    "largeCross": 0.1326,
+    "snapFast": 0.0199,
+    "staggerNormalFast": 0.0567,
+    "fanLargeSlow": 0.0619,
+    "cageThenFast": 0.1083
+   },
+   "plannedByGroup": {
+    "aimedSlow": 43,
+    "wallSlow": 210,
+    "aimedSlowPair": 124,
+    "staggerSlowNormal": 140,
+    "fanNormal": 325,
+    "largeCross": 180,
+    "snapFast": 27,
+    "staggerNormalFast": 77,
+    "fanLargeSlow": 84,
+    "cageThenFast": 147
+   },
+   "notFired": {},
+   "plannedByPhase": {
+    "LV1": 195,
+    "LV2": 423,
+    "LV3": 343,
+    "LV4": 396
+   },
+   "spawnedByPhase": {
+    "LV1": 195,
+    "LV2": 423,
+    "LV3": 343,
+    "LV4": 396
+   },
+   "plannedByTier": {
+    "slow": 747,
+    "normal": 524,
+    "fast": 86
+   },
+   "spawnedByTier": {
+    "slow": 747,
+    "normal": 524,
+    "fast": 86
+   },
+   "notFiredByTier": {},
+   "skipRatio": {
+    "fast": {
+     "numerator": 0,
+     "denominator": 86,
+     "ratio": 0
+    },
+    "ceiling": {
+     "numerator": 0,
+     "denominator": 1357,
+     "ratio": 0
+    },
+    "all": {
+     "numerator": 0,
+     "denominator": 1357,
+     "ratio": 0
+    }
+   },
+   "concurrency": {
+    "max": 26,
+    "mean": 10.63,
+    "p95": 18,
+    "samples": 6228
+   },
+   "fastSlowCoexist": {
+    "overall": 0.3465,
+    "after18s": 0.734
+   },
+   "danger40px": {
+    "samples": 112,
+    "fraction": 0.018,
+    "byNearestGroup": {
+     "aimedSlowPair": 9,
+     "staggerSlowNormal": 11,
+     "wallSlow": 22,
+     "aimedSlow": 2,
+     "fanNormal": 24,
+     "largeCross": 18,
+     "staggerNormalFast": 7,
+     "cageThenFast": 14,
+     "fanLargeSlow": 5
+    }
+   },
+   "telegraph": {
+    "checked": 86,
+    "originMismatch": 0,
+    "shownButNotFired": 0
+   },
+   "flipsPerRound": 1.1,
+   "maxActive": 26,
+   "minFlightMs": 654
+  }
+ }
+}

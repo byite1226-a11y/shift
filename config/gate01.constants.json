@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "project": "SHIFT.",
+    "gate": "01_mechanic_experiment",
+    "status": "provisional_playtest_values",
+    "purpose": "Compare input schemes and core arcade loops; not a clinical vision assessment."
+  },
+  "world": {
+    "width": 960,
+    "height": 540,
+    "roundCapMs": 40000,
+    "firstSpawnAtMs": 1000,
+    "failureHitsAllowed": 0,
+    "maxProjectiles": 32
+  },
+  "spawnPhases": [
+    {"fromMs": 1000, "untilMs": 8000, "intervalMs": 1150, "projectileSpeedPxPerSec": 130, "projectilesPerPattern": [1,1]},
+    {"fromMs": 8000, "untilMs": 18000, "intervalMs": 850, "projectileSpeedPxPerSec": 155, "projectilesPerPattern": [1,2]},
+    {"fromMs": 18000, "untilMs": 30000, "intervalMs": 650, "projectileSpeedPxPerSec": 185, "projectilesPerPattern": [2,2]},
+    {"fromMs": 30000, "untilMs": 40000, "intervalMs": 500, "projectileSpeedPxPerSec": 205, "projectilesPerPattern": [2,3]}
+  ],
+  "dodge": {
+    "playerMoveSpeedPxPerSec": 260,
+    "playerVisualRadiusPx": 10,
+    "playerHitRadiusPx": 8,
+    "projectileHitRadiusPx": 7,
+    "nearMissCenterDistanceMinPx": 15,
+    "nearMissCenterDistanceMaxPx": 30,
+    "aimAtPlayerOnSpawn": true,
+    "homingAfterSpawn": false,
+    "mouseFollowMaxSpeedPxPerSec": 260,
+    "mouseArrivalTolerancePx": 3
+  },
+  "defend": {
+    "coreVisualRadiusPx": 22,
+    "coreHitRadiusPx": 18,
+    "clickTargetHitRadiusPx": 15,
+    "targetMovesTowardStaticCore": true,
+    "closeSaveThresholdMs": 350
+  },
+  "palette": {
+    "paper": "#F2EEE6",
+    "field": "#FAF7F0",
+    "ink": "#232623",
+    "muted": "#77776D",
+    "border": "#D6D0C5",
+    "danger": "#E36B50",
+    "sage": "#8BA795",
+    "mustard": "#DBAE61"
+  }
+}

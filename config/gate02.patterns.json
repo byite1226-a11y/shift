@@ -1,0 +1,356 @@
+{
+  "metadata": {
+    "project": "SHIFT.",
+    "gate": "02_dodge_patterns",
+    "status": "provisional_playtest_values",
+    "appliesTo": "A and B (dodge). C keeps the Gate 01 schedule.",
+    "note": "Speeds are set per pattern step, never randomised per projectile. Tiers are relative to the 260 px/s player."
+  },
+  "projectileKinds": {
+    "normal": {
+      "hitRadiusPx": 7,
+      "lengthPx": 19,
+      "widthPx": 3.6
+    },
+    "large": {
+      "hitRadiusPx": 14,
+      "lengthPx": 30,
+      "widthPx": 8,
+      "note": "PROVISIONAL — the brief does not give a size for 대형탄"
+    }
+  },
+  "speedTiers": {
+    "slow": [
+      110,
+      145
+    ],
+    "normal": [
+      185,
+      235
+    ],
+    "fast": [
+      300,
+      345
+    ]
+  },
+  "fairness": {
+    "minFlightMs": 600,
+    "fastTelegraphMs": 450,
+    "minCorridorPx": 120,
+    "minFanGapPx": 60,
+    "wallGapBand": {
+      "topBottom": [
+        0.25,
+        0.75
+      ],
+      "leftRight": [
+        0.15,
+        0.85
+      ]
+    },
+    "overlapOffsetMs": 450,
+    "minFastGapMs": 2000,
+    "minWallGapMs": 5500,
+    "minSpawnDistancePx": 200
+  },
+  "patterns": {
+    "aimedSlow": {
+      "heavy": false,
+      "steps": [
+        {
+          "atMs": 0,
+          "pattern": "aimed",
+          "kind": "normal",
+          "tier": "slow",
+          "speed": 125
+        }
+      ]
+    },
+    "aimedSlowPair": {
+      "heavy": false,
+      "steps": [
+        {
+          "atMs": 0,
+          "pattern": "aimed",
+          "kind": "normal",
+          "tier": "slow",
+          "speed": 125
+        },
+        {
+          "atMs": 250,
+          "pattern": "aimed",
+          "kind": "normal",
+          "tier": "slow",
+          "speed": 125
+        }
+      ]
+    },
+    "wallSlow": {
+      "heavy": false,
+      "steps": [
+        {
+          "atMs": 0,
+          "pattern": "volley",
+          "kind": "normal",
+          "tier": "slow",
+          "speed": 115,
+          "spacingPx": 110,
+          "gapSlots": 1
+        }
+      ]
+    },
+    "staggerSlowNormal": {
+      "heavy": false,
+      "steps": [
+        {
+          "atMs": 0,
+          "pattern": "aimed",
+          "kind": "normal",
+          "tier": "slow",
+          "speed": 125
+        },
+        {
+          "atMs": 350,
+          "pattern": "aimed",
+          "kind": "normal",
+          "tier": "normal",
+          "speed": 210
+        }
+      ]
+    },
+    "largeCross": {
+      "heavy": false,
+      "steps": [
+        {
+          "atMs": 0,
+          "pattern": "aimed",
+          "kind": "large",
+          "tier": "slow",
+          "speed": 115
+        },
+        {
+          "atMs": 300,
+          "pattern": "aimed",
+          "kind": "normal",
+          "tier": "normal",
+          "speed": 200
+        }
+      ]
+    },
+    "fanNormal": {
+      "heavy": true,
+      "steps": [
+        {
+          "atMs": 0,
+          "pattern": "fan",
+          "kind": "normal",
+          "tier": "normal",
+          "speed": 195,
+          "rays": 5,
+          "spreadDeg": 64
+        }
+      ]
+    },
+    "fanLargeSlow": {
+      "heavy": false,
+      "steps": [
+        {
+          "atMs": 0,
+          "pattern": "fan",
+          "kind": "large",
+          "tier": "slow",
+          "speed": 110,
+          "rays": 3,
+          "spreadDeg": 40
+        }
+      ]
+    },
+    "cageThenFast": {
+      "heavy": true,
+      "steps": [
+        {
+          "atMs": 0,
+          "pattern": "volley",
+          "kind": "normal",
+          "tier": "slow",
+          "speed": 120,
+          "spacingPx": 110,
+          "gapSlots": 1
+        },
+        {
+          "atMs": 1200,
+          "pattern": "aimed",
+          "kind": "normal",
+          "tier": "fast",
+          "speed": 320,
+          "telegraphMs": 450
+        }
+      ]
+    },
+    "snapFast": {
+      "heavy": true,
+      "steps": [
+        {
+          "atMs": 0,
+          "pattern": "aimed",
+          "kind": "normal",
+          "tier": "fast",
+          "speed": 330,
+          "telegraphMs": 450
+        }
+      ]
+    },
+    "staggerNormalFast": {
+      "heavy": true,
+      "steps": [
+        {
+          "atMs": 0,
+          "pattern": "aimed",
+          "kind": "normal",
+          "tier": "normal",
+          "speed": 220
+        },
+        {
+          "atMs": 500,
+          "pattern": "aimed",
+          "kind": "normal",
+          "tier": "fast",
+          "speed": 310,
+          "telegraphMs": 450
+        }
+      ]
+    }
+  },
+  "phases": [
+    {
+      "name": "learn",
+      "fromMs": 1000,
+      "untilMs": 8000,
+      "intervalMs": 1400,
+      "restAfterHeavyMs": 0,
+      "maxActiveFast": 0,
+      "overlap": 1,
+      "playlist": [
+        [
+          "aimedSlow",
+          3
+        ],
+        [
+          "aimedSlowPair",
+          2
+        ],
+        [
+          "wallSlow",
+          2
+        ]
+      ]
+    },
+    {
+      "name": "slow+normal",
+      "fromMs": 8000,
+      "untilMs": 18000,
+      "intervalMs": 1150,
+      "restAfterHeavyMs": 500,
+      "maxActiveFast": 0,
+      "overlap": 1,
+      "playlist": [
+        [
+          "staggerSlowNormal",
+          3
+        ],
+        [
+          "largeCross",
+          2
+        ],
+        [
+          "fanNormal",
+          1
+        ],
+        [
+          "wallSlow",
+          1
+        ],
+        [
+          "aimedSlowPair",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "fast enters",
+      "fromMs": 18000,
+      "untilMs": 30000,
+      "intervalMs": 1000,
+      "restAfterHeavyMs": 700,
+      "maxActiveFast": 1,
+      "overlap": 1,
+      "minFastGapMs": 3000,
+      "playlist": [
+        [
+          "cageThenFast",
+          2
+        ],
+        [
+          "snapFast",
+          2
+        ],
+        [
+          "staggerNormalFast",
+          2
+        ],
+        [
+          "fanNormal",
+          1
+        ],
+        [
+          "largeCross",
+          1
+        ],
+        [
+          "staggerSlowNormal",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "combos",
+      "fromMs": 30000,
+      "untilMs": 40000,
+      "intervalMs": 900,
+      "restAfterHeavyMs": 700,
+      "maxActiveFast": 2,
+      "overlap": 2,
+      "minFastGapMs": 2200,
+      "playlist": [
+        [
+          "cageThenFast",
+          2
+        ],
+        [
+          "snapFast",
+          2
+        ],
+        [
+          "fanNormal",
+          1
+        ],
+        [
+          "staggerNormalFast",
+          2
+        ],
+        [
+          "fanLargeSlow",
+          1
+        ],
+        [
+          "largeCross",
+          1
+        ],
+        [
+          "wallSlow",
+          1
+        ]
+      ]
+    }
+  ]
+}

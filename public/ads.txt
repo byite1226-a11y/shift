@@ -1,0 +1,2 @@
+# AdSense verification. Replace pub-0000000000000000 with the same publisher id as VITE_ADSENSE_CLIENT (without "ca-").
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

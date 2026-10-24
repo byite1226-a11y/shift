@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Discoverability (2026-10-23): plain-language title, description and structured data so search engines and
+         AI assistants can tell what this is when someone asks for a reaction-speed / warm-up / 동체시력 game.
+         Set og:url and the JSON-LD "url" to the public address when the game is deployed. -->
+    <title>SHIFT. 반응속도 워밍업 아케이드 - 동체시력·회피·에임 훈련 웹게임</title>
+    <meta name="description" content="SHIFT.는 경쟁 게임 전에 반응속도와 동체시력을 깨우는 브라우저 워밍업 아케이드입니다. 탄막 회피(DODGE), 클릭 요격(DEFEND), 둘을 합친 DUAL 모드로 1~2분 만에 손과 눈을 예열하세요. 설치·로그인 없이 무료." />
+    <meta name="keywords" content="반응속도 게임, 반속 테스트, 워밍업 게임, 동체시력 훈련, 탄막 회피 게임, 에임 연습, 요격 게임, reaction time game, warm-up game, dynamic visual acuity trainer, aim trainer, bullet dodge" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SHIFT." />
+    <meta property="og:title" content="SHIFT. 반응속도 워밍업 아케이드" />
+    <meta property="og:description" content="경쟁 게임 전 1~2분, 반응속도와 동체시력을 깨우는 무료 웹 아케이드. 탄막 회피 · 클릭 요격 · DUAL." />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;800;900&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "SHIFT.",
+      "alternateName": ["쉬프트", "SHIFT reflex warm-up arcade"],
+      "description": "경쟁 게임 전에 반응속도와 동체시력을 깨우는 브라우저 워밍업 아케이드. 키보드 탄막 회피(DODGE), 마우스 클릭 요격(DEFEND), 둘을 합친 DUAL 모드. 설치와 로그인 없이 무료로 1~2분 플레이. A free browser warm-up arcade for competitive gamers: reaction time and dynamic visual acuity training with bullet-dodge, click-intercept and combined modes.",
+      "genre": ["Arcade", "Reaction game", "Bullet dodge", "Aim trainer"],
+      "keywords": "반응속도 게임, 워밍업 게임, 동체시력 훈련, 탄막 회피, 에임 연습, reaction time, warm-up, dynamic visual acuity, aim trainer",
+      "gamePlatform": "Web browser",
+      "applicationCategory": "Game",
+      "operatingSystem": "Any (desktop browser, keyboard and mouse)",
+      "playMode": "SinglePlayer",
+      "numberOfPlayers": { "@type": "QuantitativeValue", "value": 1 },
+      "inLanguage": ["ko", "en"],
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+      "audience": { "@type": "PeopleAudience", "suggestedMinAge": 10, "audienceType": "competitive game players warming up before a session" }
+    }
+    </script>
+  </head>
+  <body>
+    <div class="app">
+      <!-- The home screen (01_Home concept) is rendered inside the field overlay while the round is READY:
+           wordmark, START, mode rows (A / C; B stays reachable via ?mode=B only), best time. -->
+      <header class="top">
+        <h1 class="visually-hidden">SHIFT.</h1>
+        <div class="tools">
+          <button id="soundBtn" type="button">사운드 켜짐</button>
+          <button id="debugBtn" type="button" title="` 키">debug</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="hud">
+          <div class="hud-l"><span class="logo">SHIFT.</span><span class="hud-sub" id="modeTag">A MODE / SURVIVE</span></div>
+          <div class="hud-c"><span class="timer" id="timer">00:00.00</span><span class="hud-cap">SURVIVAL TIME</span></div>
+          <div class="hud-r"><span class="lv" id="lvLabel">LEVEL 01</span><span class="pips" id="lvPips"></span><span class="pb" id="pb">BEST --:--.--</span></div>
+        </div>
+        <div class="stage" id="stage">
+          <canvas id="field" width="960" height="540"></canvas>
+          <div class="overlay" id="overlay"></div>
+        </div>
+        <div class="caption">
+          <span id="hint">WASD / ARROW KEYS</span>
+        </div>
+      </section>
+
+      <!-- Crawlable description of the game (the field itself is a canvas). Collapsed so the home stays clean. -->
+      <details class="about">
+        <summary>SHIFT.는 어떤 게임인가요?</summary>
+        <div class="about-body">
+          <p>SHIFT.는 반응속도(반속)와 동체시력을 짧은 시간에 끌어올리는 브라우저 워밍업 아케이드입니다. FPS, 격투, 리듬 게임처럼 반응이 중요한 경쟁 게임을 시작하기 전 1~2분 예열용으로 만들었습니다.</p>
+          <ul>
+            <li><strong>DODGE</strong> 키보드로 쏟아지는 투사체를 피하며 버티는 탄막 회피. 주변 시야와 순간 판단을 깨웁니다.</li>
+            <li><strong>DEFEND</strong> 다가오는 표적을 마우스로 클릭해 요격. 조준 정확도와 반응속도 연습.</li>
+            <li><strong>DUAL</strong> 키보드로 피하면서 마우스로 요격. 손과 눈을 동시에 쓰는 멀티태스킹 훈련.</li>
+          </ul>
+          <p>설치와 로그인 없이 브라우저에서 바로 실행되고, 생존시간이 기록으로 남아 전과 비교할 수 있습니다. 단순 반응 테스트가 아니라 움직이는 물체를 쫓는 동체시력, 에임 연습, 집중력 워밍업에 맞춰 설계했습니다.</p>
+          <p lang="en">SHIFT. is a free browser warm-up arcade for competitive gamers: a reaction time and dynamic visual acuity trainer with bullet-dodge, click-intercept and combined modes. No install, no sign-up, one to two minutes before you play.</p>
+          <p>라운드가 끝나면 광고가 한 번 나올 수 있습니다. 기록은 이 브라우저에만 저장됩니다. <a href="privacy.html">개인정보 처리방침</a></p>
+        </div>
+      </details>
+
+      <section class="debug" id="debug" hidden>
+        <label>seed <input id="seedInput" size="12" spellcheck="false" /></label>
+        <button id="seedPin" type="button">고정</button>
+        <button id="seedRandom" type="button">랜덤</button>
+        <span id="seedState"></span>
+        <span class="sep"></span>
+        <label>참가자 <input id="tester" size="8" spellcheck="false" placeholder="P01" /></label>
+        <span id="sessionInfo"></span>
+        <span class="sep"></span>
+        <span id="modeStats"></span>
+        <span class="sep"></span>
+        <span id="dbgStats"></span>
+        <span class="sep"></span>
+        <button id="soundPage" type="button">효과음 듣기</button>
+        <button id="adTest" type="button">광고 테스트</button>
+        <span id="adState"></span>
+        <span class="sep"></span>
+        <button id="dlLogs" type="button">로그 JSON 다운로드</button>
+        <button id="clearRounds" type="button">세션 로그 초기화</button>
+        <button id="clearRecords" type="button">Gate 03 기록 초기화</button>
+        <span class="sep"></span>
+        <label><input type="checkbox" id="showHit" /> 판정 영역 표시</label>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "project": "SHIFT.",
+    "gate": "03_endless_survival",
+    "preset": "aware",
+    "status": "provisional_playtest_values",
+    "note": "죽림고수-style preset for comparison with g3.1 (?diff=aware). Three independent timers per level: stream (one dart at a steady cadence, aimed at the player's position when it fires), line (a straight row of darts in one of 4/8 directions, centred on the player when placed), burst (count darts from around the field that all reach the player's position at the moment the burst was planned, at the same instant). No lead, no homing. Bursts are armored: in mode D they cannot be clicked away (stream and line darts can). 2026-10-21 '쫄깃함' pass: darts at or above the 260 px/s player from LV6 (stream fast-tier with the 450 ms telegraph from LV8; maxActiveFast 6 = ceil(longest flight 3.0 s / cadence 0.65 s) + 1 committed, so the cap is a safety valve and never breaks the stream rhythm (a player parked at an edge flips every dart to the far side and sees the longest flights)), rows 9→13 darts, arrive-together bursts. 'tier' here is the telegraph/cap class: 'fast' = ≥300 px/s and telegraphed; 'normal' speeds may exceed the Gate 02 band of 235. Defend table identical to g3.1."
+  },
+  "gameVersion": "gate03",
+  "difficultyVersion": { "dodge": "g3.3-aware-27s", "defend": "c3.1" },
+  "validity": {
+    "maxLostFraction": 0.02,
+    "minAvgFps": 30,
+    "maxSingleFrameMs": 1000
+  },
+  "dodge": {
+    "firstSpawnAtMs": 1000,
+    "levels": [],
+    "timers": [
+      { "level": 1, "fromMs": 0, "untilMs": 3000, "maxActiveFast": 0,
+        "stream": { "everyMs": 1300, "speed": 130, "tier": "slow" } },
+      { "level": 2, "fromMs": 3000, "untilMs": 6000, "maxActiveFast": 0,
+        "stream": { "everyMs": 1100, "speed": 140, "tier": "slow" },
+        "line": { "everyMs": 7000, "speed": 200, "tier": "normal", "count": 9, "spacingPx": 44, "directions": 4 } },
+      { "level": 3, "fromMs": 6000, "untilMs": 9000, "maxActiveFast": 0,
+        "stream": { "everyMs": 1000, "speed": 200, "tier": "normal" },
+        "line": { "everyMs": 6500, "speed": 200, "tier": "normal", "count": 9, "spacingPx": 44, "directions": 4 },
+        "burst": { "armored": true, "everyMs": 6000, "speed": 200, "tier": "normal", "count": 5 } },
+      { "level": 4, "fromMs": 9000, "untilMs": 12000, "maxActiveFast": 0,
+        "stream": { "everyMs": 950, "speed": 215, "tier": "normal" },
+        "line": { "everyMs": 6000, "speed": 210, "tier": "normal", "count": 9, "spacingPx": 44, "directions": 4 },
+        "burst": { "armored": true, "everyMs": 5500, "speed": 210, "tier": "normal", "count": 6 } },
+      { "level": 5, "fromMs": 12000, "untilMs": 15000, "maxActiveFast": 0,
+        "stream": { "everyMs": 900, "speed": 235, "tier": "normal" },
+        "line": { "everyMs": 6000, "speed": 225, "tier": "normal", "count": 9, "spacingPx": 44, "directions": 8 },
+        "burst": { "armored": true, "everyMs": 5200, "speed": 225, "tier": "normal", "count": 6 } },
+      { "level": 6, "fromMs": 15000, "untilMs": 18000, "maxActiveFast": 0,
+        "stream": { "everyMs": 850, "speed": 260, "tier": "normal" },
+        "line": { "everyMs": 5500, "speed": 240, "tier": "normal", "count": 11, "spacingPx": 44, "directions": 8 },
+        "burst": { "armored": true, "everyMs": 5000, "speed": 240, "tier": "normal", "count": 7 } },
+      { "level": 7, "fromMs": 18000, "untilMs": 21000, "maxActiveFast": 0,
+        "stream": { "everyMs": 800, "speed": 280, "tier": "normal" },
+        "line": { "everyMs": 5500, "speed": 245, "tier": "normal", "count": 11, "spacingPx": 44, "directions": 8 },
+        "burst": { "armored": true, "everyMs": 4800, "speed": 250, "tier": "normal", "count": 7 } },
+      { "level": 8, "fromMs": 21000, "untilMs": 24000, "maxActiveFast": 6,
+        "stream": { "everyMs": 750, "speed": 300, "tier": "fast" },
+        "line": { "everyMs": 5600, "speed": 250, "tier": "normal", "count": 11, "spacingPx": 44, "directions": 8 },
+        "burst": { "armored": true, "everyMs": 4600, "speed": 260, "tier": "normal", "count": 8 } },
+      { "level": 9, "fromMs": 24000, "untilMs": 27000, "maxActiveFast": 6,
+        "stream": { "everyMs": 700, "speed": 310, "tier": "fast" },
+        "line": { "everyMs": 5400, "speed": 255, "tier": "normal", "count": 13, "spacingPx": 44, "directions": 8 },
+        "burst": { "armored": true, "everyMs": 4400, "speed": 270, "tier": "normal", "count": 8 } },
+      { "level": 10, "fromMs": 27000, "untilMs": null, "maxActiveFast": 6,
+        "stream": { "everyMs": 650, "speed": 320, "tier": "fast" },
+        "line": { "everyMs": 5200, "speed": 260, "tier": "normal", "count": 13, "spacingPx": 44, "directions": 8 },
+        "burst": { "armored": true, "everyMs": 4200, "speed": 280, "tier": "normal", "count": 8 } }
+    ]
+  },
+  "defend": {
+    "coreHitPoints": 3,
+    "coreDamageCooldownMs": 500,
+    "firstSpawnAtMs": 1000,
+    "speeds": { "slow": [115, 130, 145], "normal": [190, 210, 230], "fast": [300, 320, 340] },
+    "levels": [
+      { "level": 1, "fromMs": 0, "untilMs": 5000, "intervalMs": 1700, "dartsPerPattern": [1, 1], "tierWeights": { "slow": 1, "normal": 0, "fast": 0 }, "maxActive": 2, "maxActiveFast": 0 },
+      { "level": 2, "fromMs": 5000, "untilMs": 10000, "intervalMs": 1500, "dartsPerPattern": [1, 1], "tierWeights": { "slow": 1, "normal": 0, "fast": 0 }, "maxActive": 2, "maxActiveFast": 0 },
+      { "level": 3, "fromMs": 10000, "untilMs": 15000, "intervalMs": 1350, "dartsPerPattern": [1, 2], "tierWeights": { "slow": 1, "normal": 0, "fast": 0 }, "maxActive": 3, "maxActiveFast": 0 },
+      { "level": 4, "fromMs": 15000, "untilMs": 20000, "intervalMs": 1250, "dartsPerPattern": [1, 2], "tierWeights": { "slow": 3, "normal": 1, "fast": 0 }, "maxActive": 3, "maxActiveFast": 0 },
+      { "level": 5, "fromMs": 20000, "untilMs": 25000, "intervalMs": 1150, "dartsPerPattern": [1, 2], "tierWeights": { "slow": 2, "normal": 2, "fast": 0 }, "maxActive": 4, "maxActiveFast": 0 },
+      { "level": 6, "fromMs": 25000, "untilMs": 30000, "intervalMs": 1050, "dartsPerPattern": [2, 2], "tierWeights": { "slow": 1, "normal": 2, "fast": 0 }, "maxActive": 4, "maxActiveFast": 0 },
+      { "level": 7, "fromMs": 30000, "untilMs": 35000, "intervalMs": 950, "dartsPerPattern": [2, 2], "tierWeights": { "slow": 1, "normal": 3, "fast": 0 }, "maxActive": 5, "maxActiveFast": 0 },
+      { "level": 8, "fromMs": 35000, "untilMs": 40000, "intervalMs": 900, "dartsPerPattern": [2, 3], "tierWeights": { "slow": 1, "normal": 3, "fast": 1 }, "maxActive": 5, "maxActiveFast": 1 },
+      { "level": 9, "fromMs": 40000, "untilMs": 45000, "intervalMs": 850, "dartsPerPattern": [2, 3], "tierWeights": { "slow": 1, "normal": 3, "fast": 1 }, "maxActive": 6, "maxActiveFast": 1 },
+      { "level": 10, "fromMs": 45000, "untilMs": null, "intervalMs": 800, "dartsPerPattern": [2, 3], "tierWeights": { "slow": 1, "normal": 3, "fast": 1 }, "maxActive": 6, "maxActiveFast": 1 }
+    ]
+  }
+}

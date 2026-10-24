@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "project": "SHIFT.",
+    "gate": "03_endless_survival",
+    "status": "provisional_playtest_values",
+    "note": "LV.1–LV.9 are 3 s each (playtest 2026-10-21: the 5 s ramp felt slow); LV.10 starts at 27 s and never changes. Defend keeps 5 s levels. Every number here is a hypothesis for human playtests."
+  },
+  "gameVersion": "gate03",
+  "difficultyVersion": { "dodge": "g3.1-27s", "defend": "c3.1" },
+  "validity": {
+    "maxLostFraction": 0.02,
+    "minAvgFps": 30,
+    "maxSingleFrameMs": 1000
+  },
+  "dodge": {
+    "firstSpawnAtMs": 1000,
+    "levels": [
+      { "level": 1, "fromMs": 0, "untilMs": 3000, "intervalMs": 1500, "restAfterHeavyMs": 0, "maxActiveFast": 0, "overlap": 1, "overlapChance": 0, "minFastGapMs": 3000,
+        "playlist": [["aimedSlow", 3], ["aimedSlowPair", 1]] },
+      { "level": 2, "fromMs": 3000, "untilMs": 6000, "intervalMs": 1400, "restAfterHeavyMs": 0, "maxActiveFast": 0, "overlap": 1, "overlapChance": 0, "minFastGapMs": 3000,
+        "playlist": [["aimedSlow", 2], ["aimedSlowPair", 2], ["wallSlow", 2]] },
+      { "level": 3, "fromMs": 6000, "untilMs": 9000, "intervalMs": 1250, "restAfterHeavyMs": 400, "maxActiveFast": 0, "overlap": 1, "overlapChance": 0, "minFastGapMs": 3000,
+        "playlist": [["staggerSlowNormal", 3], ["largeCross", 2], ["wallSlow", 1], ["aimedSlowPair", 1]] },
+      { "level": 4, "fromMs": 9000, "untilMs": 12000, "intervalMs": 1150, "restAfterHeavyMs": 500, "maxActiveFast": 0, "overlap": 1, "overlapChance": 0, "minFastGapMs": 3000,
+        "playlist": [["staggerSlowNormal", 2], ["largeCross", 2], ["fanNormal", 1], ["wallSlow", 1], ["aimedSlowPair", 1]] },
+      { "level": 5, "fromMs": 12000, "untilMs": 15000, "intervalMs": 1050, "restAfterHeavyMs": 600, "maxActiveFast": 1, "overlap": 1, "overlapChance": 0, "minFastGapMs": 3200,
+        "playlist": [["snapFast", 2], ["staggerSlowNormal", 2], ["largeCross", 1], ["fanNormal", 1], ["wallSlow", 1]] },
+      { "level": 6, "fromMs": 15000, "untilMs": 18000, "intervalMs": 1000, "restAfterHeavyMs": 700, "maxActiveFast": 1, "overlap": 1, "overlapChance": 0, "minFastGapMs": 3000,
+        "playlist": [["cageThenFast", 2], ["snapFast", 2], ["staggerNormalFast", 1], ["fanNormal", 1], ["largeCross", 1], ["staggerSlowNormal", 1]] },
+      { "level": 7, "fromMs": 18000, "untilMs": 21000, "intervalMs": 950, "restAfterHeavyMs": 700, "maxActiveFast": 1, "overlap": 1, "overlapChance": 0, "minFastGapMs": 2800,
+        "playlist": [["cageThenFast", 2], ["snapFast", 2], ["staggerNormalFast", 2], ["fanNormal", 1], ["fanLargeSlow", 1], ["largeCross", 1]] },
+      { "level": 8, "fromMs": 21000, "untilMs": 24000, "intervalMs": 900, "restAfterHeavyMs": 700, "maxActiveFast": 2, "overlap": 2, "overlapChance": 0.35, "minFastGapMs": 2400,
+        "playlist": [["cageThenFast", 2], ["snapFast", 2], ["staggerNormalFast", 2], ["fanNormal", 1], ["fanLargeSlow", 1], ["largeCross", 1], ["wallSlow", 1]] },
+      { "level": 9, "fromMs": 24000, "untilMs": 27000, "intervalMs": 850, "restAfterHeavyMs": 650, "maxActiveFast": 2, "overlap": 2, "overlapChance": 0.5, "minFastGapMs": 2200,
+        "playlist": [["cageThenFast", 2], ["snapFast", 2], ["staggerNormalFast", 2], ["fanNormal", 1], ["fanLargeSlow", 1], ["largeCross", 1], ["wallSlow", 1]] },
+      { "level": 10, "fromMs": 27000, "untilMs": null, "intervalMs": 780, "restAfterHeavyMs": 550, "maxActiveFast": 2, "overlap": 2, "overlapChance": 0.6, "minFastGapMs": 2000,
+        "playlist": [["cageThenFast", 2], ["snapFast", 2], ["staggerNormalFast", 2], ["fanNormal", 1], ["fanLargeSlow", 1], ["largeCross", 1], ["wallSlow", 1]] }
+    ]
+  },
+  "defend": {
+    "coreHitPoints": 3,
+    "coreDamageCooldownMs": 500,
+    "firstSpawnAtMs": 1000,
+    "speeds": { "slow": [115, 130, 145], "normal": [190, 210, 230], "fast": [300, 320, 340] },
+    "levels": [
+      { "level": 1, "fromMs": 0, "untilMs": 5000, "intervalMs": 1700, "dartsPerPattern": [1, 1], "tierWeights": { "slow": 1, "normal": 0, "fast": 0 }, "maxActive": 2, "maxActiveFast": 0 },
+      { "level": 2, "fromMs": 5000, "untilMs": 10000, "intervalMs": 1500, "dartsPerPattern": [1, 1], "tierWeights": { "slow": 1, "normal": 0, "fast": 0 }, "maxActive": 2, "maxActiveFast": 0 },
+      { "level": 3, "fromMs": 10000, "untilMs": 15000, "intervalMs": 1350, "dartsPerPattern": [1, 2], "tierWeights": { "slow": 1, "normal": 0, "fast": 0 }, "maxActive": 3, "maxActiveFast": 0 },
+      { "level": 4, "fromMs": 15000, "untilMs": 20000, "intervalMs": 1250, "dartsPerPattern": [1, 2], "tierWeights": { "slow": 3, "normal": 1, "fast": 0 }, "maxActive": 3, "maxActiveFast": 0 },
+      { "level": 5, "fromMs": 20000, "untilMs": 25000, "intervalMs": 1150, "dartsPerPattern": [1, 2], "tierWeights": { "slow": 2, "normal": 2, "fast": 0 }, "maxActive": 4, "maxActiveFast": 0 },
+      { "level": 6, "fromMs": 25000, "untilMs": 30000, "intervalMs": 1050, "dartsPerPattern": [2, 2], "tierWeights": { "slow": 1, "normal": 2, "fast": 0 }, "maxActive": 4, "maxActiveFast": 0 },
+      { "level": 7, "fromMs": 30000, "untilMs": 35000, "intervalMs": 950, "dartsPerPattern": [2, 2], "tierWeights": { "slow": 1, "normal": 3, "fast": 0 }, "maxActive": 5, "maxActiveFast": 0 },
+      { "level": 8, "fromMs": 35000, "untilMs": 40000, "intervalMs": 900, "dartsPerPattern": [2, 3], "tierWeights": { "slow": 1, "normal": 3, "fast": 1 }, "maxActive": 5, "maxActiveFast": 1 },
+      { "level": 9, "fromMs": 40000, "untilMs": 45000, "intervalMs": 850, "dartsPerPattern": [2, 3], "tierWeights": { "slow": 1, "normal": 3, "fast": 1 }, "maxActive": 6, "maxActiveFast": 1 },
+      { "level": 10, "fromMs": 45000, "untilMs": null, "intervalMs": 800, "dartsPerPattern": [2, 3], "tierWeights": { "slow": 1, "normal": 3, "fast": 1 }, "maxActive": 6, "maxActiveFast": 1 }
+    ]
+  }
+}
