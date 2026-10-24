@@ -163,7 +163,6 @@ body.home .stage canvas { visibility: hidden; }  /* keeps the 16:9 box, hides th
     linear-gradient(to left, rgba(227, 107, 80, 0.32), transparent 86%) 100% 50% / 78% 4px no-repeat,
     linear-gradient(to left, rgba(35, 38, 35, 0.13), transparent 80%) 100% 92% / 62% 3px no-repeat;
 }
-.title .wordmark span { color: var(--danger); text-shadow: -7px 0 0 rgba(227, 107, 80, 0.22), -15px 0 0 rgba(227, 107, 80, 0.14), -25px 0 0 rgba(227, 107, 80, 0.08), -38px 0 0 rgba(227, 107, 80, 0.04); }
 /* arriving at the home screen: the word dashes in from the left and stops (once per arrival, not on mode clicks) */
 .title.enter .wordmark { animation: shift-in 460ms cubic-bezier(0.16, 1, 0.3, 1) both; }
 @keyframes shift-in { from { transform: translateX(-90px) skewX(-14deg); opacity: 0; } 60% { opacity: 1; } to { transform: translateX(0) skewX(-9deg); opacity: 1; } }

@@ -260,7 +260,7 @@ function renderOverlay(phase: Phase) {
     overlay.innerHTML = `
       ${deco}
       <div class="title${enter ? ' enter' : ''}">
-        <h2 class="wordmark">SHIFT<span>.</span></h2>
+        <h2 class="wordmark">SHIFT</h2>
         <p class="tagline">A REFLEX WARM-UP ARCADE</p>
         <button class="btn primary start" type="button">START <span class="arrow" aria-hidden="true">→</span></button>
         <div class="pick" role="group" aria-label="모드 선택">${rows}</div>

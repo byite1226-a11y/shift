@@ -1,4 +1,4 @@
-# SHIFT. — Gate 03 무한 생존 프로토타입
+# SHIFT — Gate 03 무한 생존 프로토타입
 
 경쟁 게임(FPS·격투·리듬) 전에 1~2분 동안 반응속도와 동체시력을 깨우는 무료 브라우저 워밍업 아케이드. 설치·로그인 없음. A free browser warm-up arcade for competitive gamers: reaction time and dynamic visual acuity training with bullet-dodge, click-intercept and combined modes.
 A DODGE(키보드 회피) / C DEFEND(마우스 요격) / D DUAL(키보드로 피하면서 마우스로 요격, 2026-10-21 추가) 세 모드를 한 화면에서 골라 플레이하는 브라우저 아케이드. B(마우스 회피)는 2026-10-21 플레이테스트 후 선택 화면에서 숨겼고 `?mode=B`로만 실행된다. D는 A와 같은 dodge 스케줄·난이도 버전을 쓰고(같은 키 입력이면 A와 동일한 월드), C의 15 px 클릭 판정으로 투사체를 지울 수 있으며, 투사체에 한 번 닿으면 종료된다. 요격은 횟수·쿨다운 제한이 없다. **검은 탄(armored)은 요격 불가**: 대형탄은 항상, 그리고 레벨 설정에서 `armored: true`로 표시한 타이머(aware 프리셋의 일제사격)가 해당하며 먹색으로 그려진다(D에는 클릭 링을 그리지 않는다, 판정 15 px은 C와 동일). 기록은 모드별로 분리된다.

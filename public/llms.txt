@@ -1,8 +1,8 @@
-# SHIFT.
+# SHIFT
 
-> SHIFT. is a free browser warm-up arcade for competitive gamers: a short reaction-time and dynamic visual acuity (동체시력) trainer to play for one or two minutes before an FPS, fighting or rhythm game session. No install, no sign-up.
+> SHIFT is a free browser warm-up arcade for competitive gamers: a short reaction-time and dynamic visual acuity (동체시력) trainer to play for one or two minutes before an FPS, fighting or rhythm game session. No install, no sign-up.
 
-한국어: SHIFT.는 경쟁 게임 전에 반응속도(반속)와 동체시력을 깨우는 브라우저 워밍업 아케이드입니다. 설치와 로그인 없이 1~2분 플레이합니다.
+한국어: SHIFT는 경쟁 게임 전에 반응속도(반속)와 동체시력을 깨우는 브라우저 워밍업 아케이드입니다. 설치와 로그인 없이 1~2분 플레이합니다.
 
 ## Modes
 
