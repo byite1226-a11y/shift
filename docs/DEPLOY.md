@@ -16,7 +16,32 @@ Vercel은 연결된 커넥터의 권한이 프로젝트 생성을 허용하지 �
 
 ## 3. 도메인 (AdSense를 쓰려면 필요) — 다음 단계
 
-AdSense는 `github.io`나 `vercel.app` 같은 **공유 서브도메인 사이트를 받지 않는다**. 광고를 붙이려면 직접 소유한 도메인(예: `shiftgame.kr`)이 있어야 하고, `ads.txt`가 도메인 루트(`https://도메인/ads.txt`)에 있어야 한다. 순서: 도메인 구입 → GitHub Pages 설정의 Custom domain에 입력(DNS CNAME) → `index.html`의 og:url·canonical·JSON-LD url과 Pages 워크플로의 `--base=/`로 변경(루트 호스팅이 되면 `/shift/` 접두사가 사라진다). 이 변경은 Claude Code가 한다.
+AdSense는 `github.io`나 `vercel.app` 같은 **공유 서브도메인 사이트를 받지 않는다**. 광고를 붙이려면 직접 소유한 도메인이 있어야 하고, `ads.txt`가 도메인 루트(`https://도메인/ads.txt`)에 있어야 한다.
+
+2026-10-25 후보 조회(Vercel 레지스트리 조회 + DNS): `shift.gg/.app/.games`, `shiftgame.com`, `playshift.*`, `shiftarcade.com`은 이미 등록됨. 비어 있는 것: `shiftgame.gg`, `shiftgame.io`, `shiftwarmup.com`, `shiftreflex.com`, `shiftarcade.gg/.io/.app`, `shiftplay.gg`, `shiftgames.gg`, `shift-arcade.com`; `.kr`은 `shiftgame.kr` 등 DNS 미등록(가비아에서 최종 확인). 추천 1순위 `shiftgame.gg`(게이머 TLD, 약 $51/년, Porkbun), 2순위 `shiftwarmup.com`(약 $10.5/년, Cloudflare Registrar).
+
+### 산 뒤 — 운영자: 레지스트라 DNS 관리 화면에 아래 레코드를 넣는다
+
+| 종류 | 이름(호스트) | 값 |
+| --- | --- | --- |
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| AAAA | @ | 2606:50c0:8000::153 |
+| AAAA | @ | 2606:50c0:8001::153 |
+| AAAA | @ | 2606:50c0:8002::153 |
+| AAAA | @ | 2606:50c0:8003::153 |
+| CNAME | www | byite1226-a11y.github.io |
+
+레지스트라가 기본으로 넣어 둔 "파킹" A/CNAME 레코드가 있으면 지운다. Cloudflare DNS를 쓰면 주황 구름(프록시)을 끄고 DNS only로 둔다(인증서는 GitHub이 발급).
+
+### 산 뒤 — Claude Code: 도메인 이름을 알려 주면
+
+1. `gh api -X PUT repos/byite1226-a11y/shift/pages -f cname=<도메인>` 으로 Pages 커스텀 도메인 설정, `public/CNAME`에 도메인 기록.
+2. 워크플로의 `--base=/shift/` → `--base=/` (루트 호스팅이 되면 `/shift/` 접두사가 사라진다).
+3. `index.html`의 og:url·canonical·JSON-LD url, `public/llms.txt`, README·이 문서의 주소를 새 도메인으로 교체하고 재배포.
+4. DNS 전파(보통 수 분~1시간) 뒤 GitHub이 인증서를 발급하면 "Enforce HTTPS"를 켜고(`gh api -X PUT … -F https_enforced=true`), `https://<도메인>/`, `/ads.txt`, `/privacy.html`을 확인한다. 기존 `github.io/shift/` 주소는 새 도메인으로 자동 리다이렉트된다.
 
 ## 4. Google AdSense (운영자)
 
