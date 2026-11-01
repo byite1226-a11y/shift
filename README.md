@@ -9,6 +9,7 @@ Gate 03: 시간 제한 없는 생존, A는 LV.1~10이 3초씩(27초부터 LV.10 
 광고(2026-10-23, `src/ads.ts`): 라운드가 끝나 결과 화면이 뜰 때 Google H5 Games Ads(AdSense Ad Placement API)의 `adBreak({type:'next'})`를 한 번 호출한다. 실제 표시 여부는 Google이 정하고(빈도 힌트 30초, 재고, 승인 상태), 광고가 떠 있는 동안 재시작·시작 입력은 막힌다. `VITE_ADSENSE_CLIENT`(`.env.local`, `.env.example` 참고)가 없으면 SDK를 아예 싣지 않아 로컬과 광고 차단 브라우저에서는 아무 변화가 없다. `?adtest=1`은 테스트 광고 모드. debug 패널의 "광고 테스트"로 라운드 없이 호출해 상태(`breakStatus`)를 볼 수 있다. 광고를 실제로 켜려면 직접 소유한 도메인과 AdSense 승인이 필요하다(`docs/DEPLOY.md` 3·4절).
 사운드(2026-10-23 확정, `src/audio.ts`): 전부 생성음이고 파일은 없다. 게임에서 나는 효과음은 빠른 탄 예고(틱), 근접 통과, 요격·세이브, 코어 피격, 사망, 시작, 기록 등록, 모드 선택·일시정지·재개뿐이다. 투사체 발사(낱개·일제사격·일렬탄), 빈 클릭, 레벨 상승은 사용자 결정으로 소리를 내지 않는다. 소리는 필드의 x 위치로 좌우 패닝된다. BGM은 내장 칩튠 루프(E단조 132 BPM 4마디) 두 편성: 홈 = 킥·스네어·베이스, 게임 중 = 같은 것 + 뒷박 하이햇 + 스퀘어 아르페지오, 레벨에 따른 변화 없음. 일시정지에 멈추고 결과에서 페이드아웃한다. `public/assets/bgm.mp3`를 넣으면 내장 루프 대신 그 파일을 반복 재생한다. 첫 입력 전에는 아무 소리도 나지 않고(자동재생 금지), 사운드 토글 하나로 전부 끈다. 홈의 SOUND 페이지에서 모든 효과음(꺼 둔 것은 흐리게)을 상황 설명과 함께 하나씩 들어볼 수 있고 BGM 홈/게임도 들을 수 있다.
 
+- 인수인계(현재 상태·다음 할 일): `docs/HANDOVER.md`
 - 기획·디자인 원본: `docs/brief/`
 - 보고서: `docs/REPORT_gate01.md`, `docs/REPORT_gate02.md`, `docs/REPORT_gate02_1.md`, `docs/REPORT_gate03.md`
 - 플레이테스트: `docs/PLAYTEST_GUIDE.md`(진행·수집 항목), `docs/PLAYTEST_FORM.md`(기록 양식)
